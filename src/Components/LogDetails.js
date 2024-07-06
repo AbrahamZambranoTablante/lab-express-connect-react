@@ -15,12 +15,21 @@ export default function LogDetails () {
         })
     }, [id, navigate]);
 
+    function removeLog () {
+        fetch(`http://localhost:3308/logs/${id}`, {
+            method: "DELETE"
+        })
+        .then(() => {
+            navigate("/logs");
+        })
+    }
+
     return <>
         <h1>{log.id}</h1>
         <h1>{log.captainName}</h1>
         <h2>{log.title}</h2>
         <p>{log.post}</p>
-        <button>Delete</button>
+        <button onClick={removeLog}>Delete</button>
         <Link to={`/logs/${id}/edit`}><button>Edit</button></Link>
     </>
 }
