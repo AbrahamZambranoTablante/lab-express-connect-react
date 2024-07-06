@@ -5,6 +5,7 @@ import Home from "./Pages/Home";
 import NavBar from "./Components/NavBar";
 import NotFound from "./Components/NotFound";
 import New from "./Pages/New";
+import Edit from "./Pages/Edit";
 
 function App () {
   return <>
@@ -15,6 +16,7 @@ function App () {
         <Route path="/logs" element={<Index />}/>
         <Route path="/logs/:id" element={<Show />}/>
         <Route path="/logs/new" element={<New />} />
+        <Route path="/logs/:id/edit" element={<Edit />} />
         <Route path="*" element={ <NotFound /> } />
       </Routes>
     </Router>

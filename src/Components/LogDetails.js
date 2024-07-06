@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Link } from "react-router-dom"
 
 export default function LogDetails () {
     const navigate = useNavigate();
@@ -20,5 +20,7 @@ export default function LogDetails () {
         <h1>{log.captainName}</h1>
         <h2>{log.title}</h2>
         <p>{log.post}</p>
+        <button>Delete</button>
+        <Link to={`/logs/${id}/edit`}><button>Edit</button></Link>
     </>
 }
